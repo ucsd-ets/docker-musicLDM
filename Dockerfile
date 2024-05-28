@@ -4,7 +4,7 @@
 # base notebook, contains Jupyter and relevant tools
 # See https://github.com/ucsd-ets/datahub-docker-stack/wiki/Stable-Tag 
 # for a list of the most current containers we maintain
-ARG BASE_CONTAINER=ghcr.io/ucsd-ets/datascience-notebook:stable
+ARG BASE_CONTAINER=ghcr.io/ucsd-ets/scipy-ml-notebook:2024.2-stable
 
 FROM $BASE_CONTAINER
 
@@ -20,7 +20,7 @@ USER jovyan
 
 # RUN conda install -y scikit-learn
 
-RUN pip install --no-cache-dir networkx scipy
+RUN pip install --no-cache-dir networkx scipy wave soundfile
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
