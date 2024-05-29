@@ -21,7 +21,7 @@ USER jovyan
 
 # RUN conda install -y scikit-learn
 
-RUN pip install --no-cache-dir networkx scipy wave soundfile pytorch-lightning pytorch_lightning
+RUN pip install --no-cache-dir networkx scipy librosa wave soundfile lightning-utilities pytorch-lightning pytorch_lightning
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
