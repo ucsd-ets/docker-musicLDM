@@ -21,7 +21,13 @@ USER jovyan
 
 # RUN conda install -y scikit-learn
 
-RUN pip install --no-cache-dir networkx scipy librosa==0.10.0 wave soundfile lightning-utilities==0.7.1 pytorch-lightning==1.9.4
+RUN pip install --no-cache-dir networkx scipy librosa==0.10.0 wave soundfile pytorch-lightning==1.9.4
+RUN pip install --no-cache-dir lightning-utilities==0.7.1 
+
+# Clone and install the taming-transformers repository
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/CompVis/taming-transformers.git /taming-transformers
+RUN pip install -e /taming-transformers
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
