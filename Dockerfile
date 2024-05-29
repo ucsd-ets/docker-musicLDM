@@ -1,6 +1,5 @@
 # 1) choose base container
 # generally use the most recent tag
-# Andrina testing push
 
 # base notebook, contains Jupyter and relevant tools
 # See https://github.com/ucsd-ets/datahub-docker-stack/wiki/Stable-Tag 
@@ -22,7 +21,7 @@ USER jovyan
 
 # RUN conda install -y scikit-learn
 
-RUN pip install --no-cache-dir networkx numpy scipy wave soundfile pytorch_lightning
+RUN pip install --no-cache-dir networkx scipy wave soundfile pytorch-lightning
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
